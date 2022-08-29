@@ -1,9 +1,9 @@
-import lavender from 'styles/lavender.jpg';
 import GridState from './state';
 
 const gridInitialState: GridState = {
   canvasId: 'nix-canvas',
-  imageSrc: lavender.src,
+  imageSrc: 'https://cdn.infinitumx.io/infinitumx.webp',
+  imageSize: { width: 7680, height: 4320 },
   x: 0,
   y: 0,
   init: false,
