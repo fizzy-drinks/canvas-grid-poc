@@ -6,14 +6,13 @@ import move from 'store/reducers/grid/actions/move';
 import { AppDispatch } from 'store/store';
 
 export type GridProps = {
-  mapId: string;
   initialX: number;
   initialY: number;
-  onMove: (coords: { x: number; y: number }) => void;
+  onMove?: (coords: { x: number; y: number }) => void;
 };
 
-const Grid: FC<GridProps> = ({ mapId, initialX, initialY, onMove }) => {
-  const { x: currentX, y: currentY } = useGridSelector();
+const Grid: FC<GridProps> = ({ initialX, initialY, onMove }) => {
+  const { canvasId, x: currentX, y: currentY } = useGridSelector();
   const dispatch = useDispatch<AppDispatch>();
   const handleClick: MouseEventHandler<HTMLCanvasElement> = (event) => {
     const newX =
@@ -27,7 +26,7 @@ const Grid: FC<GridProps> = ({ mapId, initialX, initialY, onMove }) => {
       event.currentTarget.offsetTop -
       event.currentTarget.offsetHeight / 2;
     dispatch(move({ x: newX, y: newY }));
-    onMove({ x: newX, y: newY });
+    onMove?.({ x: newX, y: newY });
   };
 
   useEffect(() => {
@@ -36,7 +35,7 @@ const Grid: FC<GridProps> = ({ mapId, initialX, initialY, onMove }) => {
 
   return (
     <canvas
-      id={mapId}
+      id={canvasId}
       width={600}
       height={400}
       className='border'
