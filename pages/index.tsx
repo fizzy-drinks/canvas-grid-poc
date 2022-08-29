@@ -1,12 +1,11 @@
-import Grid from "components/Grid"
-import Link from "next/link"
+import Link from 'next/link';
 
 const HomePage = () => {
   return (
     <>
-    <Link href='/test'>hi</Link>
+      <Link href='/test'>hi</Link>
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

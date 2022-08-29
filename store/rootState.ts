@@ -1,7 +1,7 @@
-import GridState from "./reducers/grid/state"
+import GridState from './reducers/grid/state';
 
 type RootState = {
-  grid: GridState
-}
+  grid: GridState;
+};
 
-export default RootState
+export default RootState;

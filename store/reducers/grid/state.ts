@@ -4,6 +4,6 @@ type GridState = {
   x: number;
   y: number;
   init: boolean;
-}
+};
 
-export default GridState
+export default GridState;

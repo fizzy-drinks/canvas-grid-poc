@@ -1,13 +1,13 @@
-import { combineReducers, configureStore, createReducer } from "@reduxjs/toolkit";
-import GridReducer from "./reducers/grid/reducer";
-import RootState from "./rootState";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import GridReducer from './reducers/grid/reducer';
+import RootState from './rootState';
 
 const store = configureStore<RootState>({
   reducer: combineReducers({
-    grid: GridReducer
-  })
-})
+    grid: GridReducer,
+  }),
+});
 
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
 
 export default store;

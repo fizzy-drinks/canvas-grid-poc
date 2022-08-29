@@ -1,5 +1,5 @@
-import GridState from "./state";
 import lavender from 'styles/lavender.jpg';
+import GridState from './state';
 
 const gridInitialState: GridState = {
   canvasId: 'nix-canvas',
@@ -7,6 +7,6 @@ const gridInitialState: GridState = {
   x: 0,
   y: 0,
   init: false,
-}
+};
 
 export default gridInitialState;
